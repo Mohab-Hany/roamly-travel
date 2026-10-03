@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Profile — Roamly</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="css/footer.css">
+<link rel="stylesheet" href="css/profile.css">
+<link rel="stylesheet" href="css/favorites.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="profile">
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">Roam<em>ly</em></a>
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html" data-page="home">Home</a>
+      <a href="destinations.html" data-page="destinations">Destinations</a>
+      <a href="hotels.html" data-page="hotels">Hotels</a>
+      <a href="favorites.html" data-page="favorites">Favorites</a>
+      <a href="profile.html" data-page="profile">Profile</a>
+    </nav>
+    <div class="header-actions">
+      <a href="favorites.html" class="icon-link" aria-label="Favorites">♡<span class="count" data-favorites-count>0</span></a>
+      <a href="hotels.html" class="btn btn-primary btn-sm">Book Now</a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div id="profile-root">
+    <section class="section">
+      <div class="container">
+        <div class="profile-layout">
+
+          <aside class="profile-card">
+            <img id="profile-avatar" class="profile-avatar" src="" alt="Your profile photo">
+            <h3 id="profile-name"></h3>
+            <div class="email" id="profile-email"></div>
+            <div class="profile-stats">
+              <div><strong id="stat-trips">0</strong><span>Trips</span></div>
+              <div><strong id="stat-favorites">0</strong><span>Favorites</span></div>
+            </div>
+          </aside>
+
+          <div>
+            <div class="detail-block">
+              <h3>My Bookings</h3>
+              <div class="bookings-tabs favorites-tabs" style="border-bottom:1px solid var(--color-line)">
+                <button class="fav-tab is-active" data-tab="upcoming">Upcoming</button>
+                <button class="fav-tab" data-tab="completed">Completed</button>
+                <button class="fav-tab" data-tab="cancelled">Cancelled</button>
+              </div>
+              <div id="bookings-list"></div>
+            </div>
+
+            <div class="detail-block">
+              <h3>Edit Profile</h3>
+              <form id="edit-profile-form" class="edit-form">
+                <div class="form-grid">
+                  <div class="field">
+                    <label for="pf-firstName">First Name</label>
+                    <input type="text" id="pf-firstName" name="firstName" required>
+                  </div>
+                  <div class="field">
+                    <label for="pf-lastName">Last Name</label>
+                    <input type="text" id="pf-lastName" name="lastName" required>
+                  </div>
+                  <div class="field full">
+                    <label for="pf-email">Email</label>
+                    <input type="email" id="pf-email" name="email" required>
+                  </div>
+                  <div class="field full">
+                    <label for="pf-phone">Phone</label>
+                    <input type="tel" id="pf-phone" name="phone" required>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary" style="margin-top:var(--space-4)">Save Changes</button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom" style="border-top:none;padding-top:0">
+      <span>© 2026 Roamly. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/search.js"></script>
+<script src="js/filters.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/main.js"></script>
+<script src="js/profile.js"></script>
+</body>
+</html>

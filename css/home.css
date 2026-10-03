@@ -1,0 +1,152 @@
+/* ==========================================================================
+   ROAMLY — HOME
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  background: var(--color-ocean-900);
+  color: var(--color-white);
+  padding-top: var(--space-9);
+  padding-bottom: var(--space-9);
+  overflow: hidden;
+}
+
+.hero::before {
+  /* faint dotted flight-route lines, subject-grounded texture */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 15% 25%, rgba(255,255,255,0.09) 0, rgba(255,255,255,0.09) 2px, transparent 2.5px),
+    radial-gradient(circle at 78% 15%, rgba(255,255,255,0.07) 0, rgba(255,255,255,0.07) 2px, transparent 2.5px),
+    radial-gradient(circle at 60% 70%, rgba(255,255,255,0.06) 0, rgba(255,255,255,0.06) 2px, transparent 2.5px);
+  background-size: 340px 340px;
+  pointer-events: none;
+}
+
+.hero .container { position: relative; }
+
+.hero-eyebrow {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--color-gold-500);
+  font-size: var(--step-md);
+  margin-bottom: var(--space-3);
+}
+
+.hero-content { max-width: 640px; }
+
+.hero h1 {
+  color: var(--color-white);
+  font-size: clamp(2.4rem, 5vw, var(--step-3xl));
+}
+
+.hero p.lead {
+  color: #C9D6CE;
+  font-size: var(--step-md);
+  max-width: 46ch;
+}
+
+/* Search strip — echoes the boarding-pass perforation, since this is
+   the moment a visitor "books their route". */
+.search-panel {
+  margin-top: var(--space-7);
+  background: var(--color-paper-raised);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 0.9fr auto;
+  gap: var(--space-4);
+  box-shadow: 0 30px 60px -30px rgba(0,0,0,0.5);
+}
+
+.search-panel .field input,
+.search-panel .field select { border-color: transparent; background: var(--color-ocean-100); }
+
+.search-panel .btn { align-self: end; }
+
+@media (max-width: 980px) {
+  .search-panel { grid-template-columns: 1fr 1fr; }
+  .search-panel .btn-block-mobile { grid-column: 1 / -1; }
+}
+
+/* ---------- Destination / hotel grids ---------- */
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-5); }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-5); }
+
+@media (max-width: 980px) {
+  .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 620px) {
+  .grid-3, .grid-4 { grid-template-columns: 1fr; }
+}
+
+/* ---------- Why choose us ---------- */
+.why-us { background: var(--color-ocean-100); }
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+}
+
+.why-item .why-index {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--step-xl);
+  color: var(--color-coral-600);
+  margin-bottom: var(--space-2);
+}
+
+.why-item h3 { font-size: var(--step-md); margin-bottom: 6px; }
+.why-item p { font-size: var(--step-sm); margin: 0; }
+
+@media (max-width: 860px) { .why-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .why-grid { grid-template-columns: 1fr; } }
+
+/* ---------- Testimonials ---------- */
+.testimonial-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+}
+
+.testimonial {
+  background: var(--color-paper-raised);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+}
+
+.testimonial p.quote {
+  font-family: var(--font-display);
+  font-size: var(--step-md);
+  color: var(--color-ink);
+  margin-bottom: var(--space-4);
+}
+
+.testimonial-person { display: flex; align-items: center; gap: var(--space-3); }
+.testimonial-person img { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; }
+.testimonial-person strong { display: block; font-size: var(--step-sm); }
+.testimonial-person span { font-size: var(--step-xs); color: var(--color-ink-soft); }
+
+@media (max-width: 860px) { .testimonial-row { grid-template-columns: 1fr; } }
+
+/* ---------- CTA band ---------- */
+.cta-band {
+  background: var(--color-coral-600);
+  color: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+}
+.cta-band h2 { color: var(--color-white); margin: 0; }
+.cta-band .btn-secondary { border-color: var(--color-white); color: var(--color-white); }
+.cta-band .btn-secondary:hover { background: var(--color-white); color: var(--color-coral-600); }
+
+@media (max-width: 700px) {
+  .cta-band { flex-direction: column; text-align: center; padding: var(--space-6); }
+}

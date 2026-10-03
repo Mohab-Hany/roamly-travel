@@ -1,0 +1,90 @@
+/* ==========================================================================
+   ROAMLY — DETAILS (destination + hotel)
+   ========================================================================== */
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: var(--space-3);
+  height: 440px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: var(--space-7);
+}
+.gallery__main { height: 100%; }
+.gallery__main img { width: 100%; height: 100%; object-fit: cover; }
+.gallery__side { display: grid; grid-template-rows: 1fr 1fr; gap: var(--space-3); }
+.gallery__side img { width: 100%; height: 100%; object-fit: cover; }
+
+.detail-layout {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: var(--space-7);
+  align-items: start;
+}
+
+.detail-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-4);
+  margin-bottom: var(--space-2);
+}
+
+.detail-meta { display: flex; align-items: center; gap: var(--space-4); color: var(--color-ink-soft); font-size: var(--step-sm); margin-bottom: var(--space-6); }
+
+.detail-block { margin-bottom: var(--space-7); }
+.detail-block h3 { margin-bottom: var(--space-4); }
+
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+}
+.amenity-item {
+  display: flex; align-items: center; gap: var(--space-3);
+  padding: var(--space-3);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-sm);
+  font-size: var(--step-sm);
+}
+.amenity-item .icon { font-size: 18px; }
+
+.room-list { display: flex; flex-direction: column; gap: var(--space-3); }
+.room-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: var(--space-4);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+}
+.room-row h4 { margin-bottom: 2px; }
+.room-row .price { font-family: var(--font-display); font-size: var(--step-lg); color: var(--color-ocean-900); }
+
+/* ---------- Sticky booking card (boarding-pass shaped) ---------- */
+.booking-card {
+  position: sticky;
+  top: 96px;
+  background: var(--color-paper-raised);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow: 0 24px 50px -32px rgba(14,46,44,0.4);
+}
+.booking-card__price { font-family: var(--font-display); font-size: var(--step-xl); color: var(--color-ocean-900); margin-bottom: var(--space-4); }
+.booking-card__price span { font-family: var(--font-body); font-size: var(--step-sm); font-weight: 500; color: var(--color-ink-soft); }
+
+.booking-card .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); margin-bottom: var(--space-3); }
+
+.price-breakdown { margin: var(--space-5) 0; padding-top: var(--space-4); border-top: 1.5px dashed var(--color-line); }
+.price-line { display: flex; justify-content: space-between; font-size: var(--step-sm); color: var(--color-ink-soft); padding: 5px 0; }
+.price-line.total { color: var(--color-ink); font-weight: 700; font-size: var(--step-md); border-top: 1px solid var(--color-line); margin-top: 6px; padding-top: 12px; }
+
+.attraction-tags { display: flex; gap: var(--space-2); flex-wrap: wrap; }
+
+@media (max-width: 980px) {
+  .detail-layout { grid-template-columns: 1fr; }
+  .booking-card { position: static; }
+  .gallery { height: auto; grid-template-columns: 1fr; }
+  .gallery__side { grid-template-columns: 1fr 1fr; grid-template-rows: none; }
+  .amenities-grid { grid-template-columns: 1fr; }
+}

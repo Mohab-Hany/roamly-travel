@@ -1,0 +1,50 @@
+/* ==========================================================================
+   ROAMLY — DESTINATIONS
+   ========================================================================== */
+
+.page-hero {
+  background: var(--color-ocean-900);
+  color: var(--color-white);
+  padding-block: var(--space-8) var(--space-7);
+}
+.page-hero h1 { color: var(--color-white); font-size: clamp(2rem, 4vw, var(--step-2xl)); }
+.page-hero p { color: #C9D6CE; max-width: 50ch; }
+
+.page-toolbar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  margin: calc(var(--space-7) * -1) auto var(--space-7);
+  position: relative;
+  background: var(--color-paper-raised);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-5);
+  box-shadow: 0 24px 50px -30px rgba(0,0,0,0.4);
+}
+
+.page-toolbar .search-field {
+  flex: 1;
+  min-width: 220px;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  border: 1.5px solid var(--color-line);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+}
+.page-toolbar .search-field input { border: none; width: 100%; background: none; }
+.page-toolbar .search-field input:focus { outline: none; }
+
+.chip-row { display: flex; gap: var(--space-2); flex-wrap: wrap; }
+
+.results-meta { color: var(--color-ink-soft); font-size: var(--step-sm); margin-bottom: var(--space-5); }
+.results-meta strong { color: var(--color-ink); }
+
+.attraction-list { display: flex; flex-direction: column; gap: var(--space-3); }
+.attraction-list li {
+  display: flex; justify-content: space-between;
+  padding: var(--space-3) 0;
+  border-bottom: 1px dashed var(--color-line);
+  font-size: var(--step-sm);
+}

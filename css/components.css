@@ -1,0 +1,230 @@
+/* ==========================================================================
+   ROAMLY — COMPONENTS
+   ========================================================================== */
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: 13px 26px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: var(--step-sm);
+  transition: transform var(--duration) var(--ease), background var(--duration) var(--ease), color var(--duration) var(--ease);
+  white-space: nowrap;
+}
+.btn:active { transform: translateY(1px); }
+
+.btn-primary {
+  background: var(--color-coral-600);
+  color: var(--color-white);
+}
+.btn-primary:hover { background: var(--color-coral-700); }
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-ocean-900);
+  border: 1.5px solid var(--color-ocean-900);
+}
+.btn-secondary:hover { background: var(--color-ocean-900); color: var(--color-white); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--color-ocean-900);
+  padding: 10px 6px;
+  text-decoration: underline;
+  text-decoration-color: var(--color-line);
+  text-underline-offset: 4px;
+}
+.btn-ghost:hover { text-decoration-color: var(--color-coral-600); }
+
+.btn-block { width: 100%; }
+.btn-sm { padding: 9px 16px; font-size: var(--step-xs); }
+.btn[disabled] { opacity: 0.5; cursor: not-allowed; }
+
+/* ---------- Form fields ---------- */
+.field { display: flex; flex-direction: column; gap: 6px; }
+
+.field label {
+  font-size: var(--step-xs);
+  font-weight: 600;
+  color: var(--color-ink-soft);
+}
+
+.field input,
+.field select,
+.field textarea {
+  border: 1.5px solid var(--color-line);
+  border-radius: var(--radius-sm);
+  padding: 11px 13px;
+  background: var(--color-paper-raised);
+  color: var(--color-ink);
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--color-ocean-500);
+  outline: none;
+}
+
+.field .error-msg {
+  font-size: var(--step-xs);
+  color: var(--color-coral-700);
+  display: none;
+}
+.field.has-error input,
+.field.has-error select { border-color: var(--color-coral-600); }
+.field.has-error .error-msg { display: block; }
+
+/* ---------- Badge / rating / tag ---------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 100px;
+  font-size: var(--step-xs);
+  font-weight: 600;
+}
+.badge-gold { background: var(--color-gold-100); color: #7A5B18; }
+.badge-ocean { background: var(--color-ocean-100); color: var(--color-ocean-700); }
+.badge-coral { background: var(--color-coral-100); color: var(--color-coral-700); }
+
+.rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: var(--step-xs);
+  font-weight: 600;
+  color: var(--color-ink);
+}
+.rating .stars { color: var(--color-gold-500); letter-spacing: 1px; }
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 15px;
+  border: 1.5px solid var(--color-line);
+  border-radius: 100px;
+  font-size: var(--step-xs);
+  font-weight: 600;
+  color: var(--color-ink-soft);
+  background: var(--color-paper-raised);
+  transition: all var(--duration) var(--ease);
+}
+.chip.is-active,
+.chip:has(input:checked),
+.chip:hover { border-color: var(--color-ocean-700); color: var(--color-ocean-900); background: var(--color-ocean-100); }
+
+/* ---------- Boarding-pass card (signature motif) ----------
+   A ticket-stub shape: two half-circle notches punched at the
+   perforation between the "info" half and the "action/price" half. */
+.pass-card {
+  position: relative;
+  background: var(--color-paper-raised);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--duration) var(--ease), box-shadow var(--duration) var(--ease);
+}
+.pass-card:hover { transform: translateY(-3px); box-shadow: 0 14px 28px -18px rgba(14, 46, 44, 0.35); }
+
+.pass-card__media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--color-ocean-100);
+}
+.pass-card__media img { width: 100%; height: 100%; object-fit: cover; }
+
+.pass-card__fav {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.92);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px;
+  color: var(--color-ink-soft);
+  transition: transform var(--duration) var(--ease), color var(--duration) var(--ease);
+}
+.pass-card__fav:hover { transform: scale(1.08); }
+.pass-card__fav.is-active { color: var(--color-coral-600); }
+
+.pass-card__body {
+  padding: var(--space-4) var(--space-4) var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pass-card__perforation {
+  position: relative;
+  margin: 2px 0;
+  border-top: 1.5px dashed var(--color-line);
+}
+.pass-card__perforation::before,
+.pass-card__perforation::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: var(--color-paper);
+}
+.pass-card__perforation::before { left: -25px; }
+.pass-card__perforation::after { right: -25px; }
+
+.pass-card__footer {
+  padding: var(--space-3) var(--space-4) var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pass-card__price { font-family: var(--font-display); font-size: var(--step-lg); color: var(--color-ocean-900); }
+.pass-card__price span { font-family: var(--font-body); font-size: var(--step-xs); font-weight: 500; color: var(--color-ink-soft); }
+
+/* ---------- Empty state ---------- */
+.empty-state {
+  text-align: center;
+  padding: var(--space-9) var(--space-5);
+  border: 1.5px dashed var(--color-line);
+  border-radius: var(--radius-lg);
+}
+.empty-state h3 { margin-bottom: var(--space-2); }
+.empty-state p { margin-inline: auto; }
+
+/* ---------- Toast ---------- */
+.toast {
+  position: fixed;
+  bottom: var(--space-6);
+  left: 50%;
+  transform: translate(-50%, 20px);
+  background: var(--color-ocean-900);
+  color: var(--color-white);
+  padding: 14px 24px;
+  border-radius: var(--radius-sm);
+  font-size: var(--step-sm);
+  font-weight: 500;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--duration) var(--ease), transform var(--duration) var(--ease);
+  z-index: 400;
+}
+.toast.is-visible { opacity: 1; transform: translate(-50%, 0); pointer-events: auto; }
+
+/* ---------- Loading skeleton ---------- */
+.skeleton {
+  background: linear-gradient(100deg, var(--color-ocean-100) 30%, #eef4f0 50%, var(--color-ocean-100) 70%);
+  background-size: 200% 100%;
+  animation: shimmer 1.3s infinite;
+  border-radius: var(--radius-md);
+}
+@keyframes shimmer { to { background-position: -200% 0; } }

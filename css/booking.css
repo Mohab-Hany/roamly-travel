@@ -1,0 +1,83 @@
+/* ==========================================================================
+   ROAMLY — BOOKING & CONFIRMATION
+   ========================================================================== */
+
+.booking-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: var(--space-7);
+  align-items: start;
+}
+
+.booking-steps { display: flex; gap: var(--space-5); margin-bottom: var(--space-7); }
+.booking-step { display: flex; align-items: center; gap: 10px; color: var(--color-ink-soft); font-size: var(--step-sm); }
+.booking-step .dot { width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid var(--color-line); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; }
+.booking-step.is-active { color: var(--color-ink); }
+.booking-step.is-active .dot { background: var(--color-coral-600); border-color: var(--color-coral-600); color: var(--color-white); }
+
+.form-card {
+  background: var(--color-paper-raised);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  margin-bottom: var(--space-5);
+}
+.form-card h3 { margin-bottom: var(--space-4); }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+.form-grid .field.full { grid-column: 1 / -1; }
+
+.summary-card {
+  position: sticky;
+  top: 96px;
+  background: var(--color-ocean-900);
+  color: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  overflow: hidden;
+}
+.summary-card__hotel { display: flex; gap: var(--space-3); margin-bottom: var(--space-5); }
+.summary-card__hotel img { width: 76px; height: 76px; border-radius: var(--radius-sm); object-fit: cover; }
+.summary-card__hotel h4 { color: var(--color-white); margin-bottom: 2px; }
+.summary-card__hotel span { font-size: var(--step-xs); color: #A9BAB0; }
+
+.summary-card .perforation {
+  border-top: 1.5px dashed rgba(255,255,255,0.25);
+  margin: var(--space-4) 0;
+}
+
+.summary-card .price-line { color: #C9D6CE; }
+.summary-card .price-line.total { color: var(--color-white); border-top-color: rgba(255,255,255,0.2); }
+
+/* ---------- Confirmation ---------- */
+.confirmation-wrap { max-width: 640px; margin-inline: auto; text-align: center; padding-block: var(--space-8); }
+.confirmation-icon {
+  width: 84px; height: 84px; border-radius: 50%;
+  background: var(--color-ocean-100);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 38px; margin-inline: auto var(--space-5);
+}
+.confirmation-id {
+  font-family: var(--font-display);
+  font-size: var(--step-lg);
+  letter-spacing: 0.04em;
+  color: var(--color-coral-600);
+  margin: var(--space-2) 0 var(--space-6);
+}
+
+.confirm-details {
+  text-align: left;
+  background: var(--color-paper-raised);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  margin-bottom: var(--space-6);
+}
+.confirm-details .price-line { font-size: var(--step-base); }
+
+.confirm-actions { display: flex; gap: var(--space-3); justify-content: center; flex-wrap: wrap; }
+
+@media (max-width: 900px) {
+  .booking-layout { grid-template-columns: 1fr; }
+  .summary-card { position: static; }
+  .form-grid { grid-template-columns: 1fr; }
+}

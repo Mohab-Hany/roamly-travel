@@ -1,0 +1,105 @@
+/* ==========================================================================
+   ROAMLY — BASE
+   ========================================================================== */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--step-base);
+  line-height: 1.6;
+  color: var(--color-ink);
+  background: var(--color-paper);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.12;
+  margin: 0 0 var(--space-3);
+  color: var(--color-ocean-900);
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: var(--step-3xl); font-weight: 500; }
+h2 { font-size: var(--step-2xl); font-weight: 500; }
+h3 { font-size: var(--step-xl); }
+h4 { font-size: var(--step-md); }
+
+p { margin: 0 0 var(--space-4); max-width: 62ch; color: var(--color-ink-soft); }
+
+a { color: inherit; text-decoration: none; }
+
+ul { list-style: none; margin: 0; padding: 0; }
+
+button, input, select, textarea { font-family: inherit; font-size: inherit; color: inherit; }
+
+button { cursor: pointer; border: none; background: none; }
+
+fieldset { border: none; margin: 0; padding: 0; }
+
+:focus-visible {
+  outline: 2px solid var(--color-coral-600);
+  outline-offset: 2px;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+.section {
+  padding-block: var(--space-8);
+}
+
+.section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-5);
+  margin-bottom: var(--space-6);
+  border-bottom: 1px solid var(--color-line);
+  padding-bottom: var(--space-4);
+}
+
+.section-head h2 { margin: 0; }
+
+.section-head p { margin: var(--space-1) 0 0; }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--space-4);
+  top: -60px;
+  background: var(--color-ocean-900);
+  color: var(--color-white);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-sm);
+  z-index: 200;
+  transition: top var(--duration) var(--ease);
+}
+.skip-link:focus { top: var(--space-4); }

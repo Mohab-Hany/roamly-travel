@@ -1,0 +1,52 @@
+/* ==========================================================================
+   ROAMLY — FOOTER
+   ========================================================================== */
+
+.site-footer {
+  background: var(--color-ocean-900);
+  color: #C9D6CE;
+  padding-block: var(--space-8) var(--space-6);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  gap: var(--space-6);
+  padding-bottom: var(--space-7);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+.footer-grid .logo { color: var(--color-white); }
+.footer-grid .logo em { color: var(--color-gold-500); }
+
+.footer-about p { color: #A9BAB0; margin-top: var(--space-3); max-width: 34ch; }
+
+.footer-col h4 { color: var(--color-white); font-size: var(--step-sm); text-transform: none; margin-bottom: var(--space-4); }
+
+.footer-col ul { display: flex; flex-direction: column; gap: var(--space-3); }
+.footer-col a { color: #A9BAB0; font-size: var(--step-sm); }
+.footer-col a:hover { color: var(--color-white); }
+
+.social-row { display: flex; gap: var(--space-3); margin-top: var(--space-4); }
+.social-row a {
+  width: 36px; height: 36px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px;
+}
+.social-row a:hover { background: rgba(255,255,255,0.1); }
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--space-5);
+  font-size: var(--step-xs);
+  color: #8AA095;
+}
+
+@media (max-width: 860px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-bottom { flex-direction: column; gap: var(--space-2); text-align: center; }
+}

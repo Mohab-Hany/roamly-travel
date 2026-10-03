@@ -1,0 +1,65 @@
+/* ==========================================================================
+   ROAMLY — DESIGN TOKENS
+   Palette: dusk-ocean teal + sun-worn coral + brass gold, on warm paper.
+   Signature motif: the boarding-pass stub (dashed tear-line, ticket notch)
+   used across destination cards, hotel cards and the booking summary.
+   ========================================================================== */
+
+:root {
+  /* ---- Color: base ---- */
+  --color-ocean-900: #0E2E2C;   /* deep teal — headers, footer, nav */
+  --color-ocean-700: #17493F;   /* primary buttons, links */
+  --color-ocean-500: #2C7A66;   /* hover states, secondary accents */
+  --color-ocean-100: #E4EEE8;   /* tinted panels on teal */
+
+  --color-coral-600: #D9603C;   /* primary CTA, price, active states */
+  --color-coral-700: #B94E2F;   /* CTA hover */
+  --color-coral-100: #FBE4D7;   /* coral tint backgrounds */
+
+  --color-gold-500: #C99A3E;    /* ratings, badges, dividers */
+  --color-gold-100: #F3E6C7;
+
+  --color-paper: #F7F2E9;       /* page background */
+  --color-paper-raised: #FFFCF6;/* card background */
+  --color-ink: #22281F;         /* primary text */
+  --color-ink-soft: #5B6459;    /* secondary text */
+  --color-line: #DCD2BC;        /* hairline borders */
+  --color-white: #FFFFFF;
+
+  /* ---- Type ---- */
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-body: "Work Sans", "Segoe UI", sans-serif;
+
+  --step-xs: 0.8rem;
+  --step-sm: 0.9rem;
+  --step-base: 1rem;
+  --step-md: 1.15rem;
+  --step-lg: 1.5rem;
+  --step-xl: 2.1rem;
+  --step-2xl: 2.9rem;
+  --step-3xl: 3.8rem;
+
+  /* ---- Spacing scale ---- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  /* ---- Shape ---- */
+  --radius-sm: 4px;
+  --radius-md: 10px;
+  --radius-lg: 18px;
+
+  /* ---- Layout ---- */
+  --container-width: 1180px;
+  --container-pad: var(--space-5);
+
+  /* ---- Motion ---- */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration: 180ms;
+}
